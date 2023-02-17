@@ -18,6 +18,23 @@ const clickSound = new Audio("assets/sounds/mixkit-arcade-game-jump-coin-216.wav
 
 tiles.forEach((tile) => tile.addEventListener("click", tileClick));
 
+function setHoverText(){
+    tiles.forEach(tile=>{
+        tile.classList.remove("x-hover");
+        tile.classList.remove("o-hover");
+    });
+
+    const hoverClass = `${turn.toLowerCase()}-hover`;
+
+    tiles.forEach((tile) => {
+        if (tile.innerText == "") {
+            tile.classList.add(hoverClass);
+        }
+    });
+}
+
+setHoverText();
+
 function tileClick(event){
     if (gameOverArea.classList.contains("visible")) {
         return;
@@ -42,4 +59,26 @@ function tileClick(event){
     }
 
     clickSound.play();
+    setHoverText();
+    checkWinner();
 }
+
+function checkWinner(){
+    for(const winningCombination of winningCombinations) {
+        console.log(winningCombination);
+    }
+}
+
+const winningCombinations = [
+
+    {combo:[1,2,3], strikeClass: "strike-row-1" },
+    {combo:[4,5,6], strikeClass: "strike-row-2" },
+    {combo:[7,8,9], strikeClass: "strike-row-3" },
+
+    {combo:[1,4,7], strikeClass: "strike-column-1" },
+    {combo:[2,5,8], strikeClass: "strike-column-2" },
+    {combo:[3,6,9], strikeClass: "strike-column-3" },
+
+    {combo:[1,5,9], strikeClass: "strike-diagonal -1" },
+    {combo:[3,5,7], strikeClass: "strike-diagonal -2" },
+];

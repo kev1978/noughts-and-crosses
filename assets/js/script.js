@@ -65,7 +65,13 @@ function tileClick(event){
 
 function checkWinner(){
     for(const winningCombination of winningCombinations) {
-        console.log(winningCombination);
+        const {combo, strikeClass} = winningCombination;
+        const tileValue1 = boardState[combo[0]-1]
+        const tileValue2 = boardState[combo[1]-1]
+        const tileValue3 = boardState[combo[2]-1]
+
+        if (tileValue1 != null && tileValue1 === tileValue2 && tileValue1 === tileValue3)
+        strike.classList.add(strikeClass);
     }
 }
 

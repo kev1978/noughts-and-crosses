@@ -10,6 +10,7 @@ body {
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
     cursor: pointer;
+    position: relative;
 }
 
 .tile {
@@ -28,6 +29,46 @@ body {
     border-bottom: 0.2em solid red;
 }
 
+.strike {
+    position: absolute;
+    background-color: blue;
+}
+
+.strike-row-1 {
+    width: 100%;
+    height: 4px;
+    top: 15%;
+}
+
+.strike-row-2 {
+    width: 100%;
+    height: 4px;
+    top: 48%;
+}
+
+.strike-row-3 {
+    width: 100%;
+    height: 4px;
+    top: 83%;
+}
+
+.strike-column-1 {
+    height: 100%;
+    width: 4px;
+    left: 15%;
+}
+
+.strike-column-2 {
+    height: 100%;
+    width: 4px;
+    left: 48%;
+}
+
+.strike-column-3 {
+    height: 100%;
+    width: 4px;
+    left: 83%;
+}
 
 h1 {
     color: brown;

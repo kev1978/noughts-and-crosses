@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: black;
+    color: coral;
 
 }
 #board{
@@ -14,7 +15,7 @@ body {
 }
 
 .tile {
-    color: aqua;
+    color: currentColor;
     font-size: 2em;
     display: flex;
     justify-content: center;
@@ -22,11 +23,11 @@ body {
 }
 
 .right-border {
-    border-right: 0.2em solid red;
+    border-right: 0.2em solid currentColor;
 }
 
 .bottom-border {
-    border-bottom: 0.2em solid red;
+    border-bottom: 0.2em solid currentColor;
 }
 
 .strike {
@@ -70,6 +71,61 @@ body {
     left: 83%;
 }
 
+.stirke-diagonal-1 {
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    transform: skewY(45DEG);
+}
+
+.stirke-diagonal-2 {
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    transform: skewY(-45DEG);
+}
+
 h1 {
-    color: brown;
+    color: currentColor;
+}
+
+#game-over-area {
+    text-align: center;
+    border: blue 8px solid;
+    padding: 50px;
+    width: 50%;
+    margin-top: 50px;
+
+}
+
+h2 {
+    color: currentColor;
+    font-size: 2em;
+    margin-top: 0px;
+}
+
+button {
+    background-color: transparent;
+    color: blue;
+    border 1px solid;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.hidden {
+    display: none;
+}
+
+.visable {
+    display: block;
+}
+
+.x-hover:hover::after{
+    content: "X";
+    opacity: 0.4;
+}
+
+.o-hover:hover::after{
+    content: "O";
+    opacity: 0.4;
 }

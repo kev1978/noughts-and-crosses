@@ -71,14 +71,14 @@ body {
     left: 83%;
 }
 
-.stirke-diagonal-1 {
+.strike-diagonal-1 {
     width: 90%;
     height: 4px;
     top: 50%;
     transform: skewY(45DEG);
 }
 
-.stirke-diagonal-2 {
+.strike-diagonal-2 {
     width: 90%;
     height: 4px;
     top: 50%;
